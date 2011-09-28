@@ -2,36 +2,21 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-3.0/webgraph-3.0.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/Users/mario/javalib/webgraph-3.0/docs/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-deps/colt-1.2.0.jar"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-deps/dsiutils-2.0.jar"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-deps/fastutil-6.4.jar"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-deps/jakarta-commons-collections-3.2.1.jar"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-deps/jakarta-commons-configuration-1.4.jar"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-deps/jakarta-commons-io-1.4.jar"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-deps/jakarta-commons-lang-2.3.jar"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-deps/jsap-2.1.jar"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-deps/junit4-4.5.jar"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-deps/log4j-1.2.14.jar"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/webgraph-deps/sux4j-3.0.jar"/>
-	<classpathentry kind="lib" path="/Users/mario/javalib/graph-weighted/graph_weighted-1.0.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/Users/mario/javalib/graph-weighted/docs/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Users/mario/javalib/law-1.4/law-1.4.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/Users/mario/javalib/law-1.4/docs/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Users/mario/javalib/mysql-connector-java-5.1.17/mysql-connector-java-5.1.17-bin.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/Users/mario/javalib/mysql-connector-java-5.1.17/docs/"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="lib/webgraph-deps/colt-1.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/dsiutils-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/fastutil-6.4.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/jakarta-commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/jakarta-commons-configuration-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/jakarta-commons-digester-1.8.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/jakarta-commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/jakarta-commons-lang-2.3.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/jakarta-commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/jsap-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/junit4-4.5.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-deps/sux4j-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-3.0/webgraph-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.17/mysql-connector-java-5.1.17-bin.jar"/>
+	<classpathentry kind="lib" path="lib/law-1.4/law-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
