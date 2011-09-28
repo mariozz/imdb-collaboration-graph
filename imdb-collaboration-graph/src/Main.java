@@ -1,5 +1,4 @@
 import it.unimi.dsi.fastutil.io.BinIO;
-import it.unimi.dsi.webgraph.ASCIIGraph;
 import it.unimi.dsi.webgraph.BVGraph;
 import it.unimi.dsi.webgraph.LazyIntIterator;
 
