@@ -1,4 +1,5 @@
 import it.unimi.dsi.fastutil.io.BinIO;
+import it.unimi.dsi.webgraph.ASCIIGraph;
 import it.unimi.dsi.webgraph.BVGraph;
 import it.unimi.dsi.webgraph.LazyIntIterator;
 
@@ -28,7 +29,7 @@ public class Main {
 
 		/* Load the graph */
 		BVGraph g = BVGraph.load(graph);
-
+		
 		System.out.println("nodes: " + g.numNodes());
 		System.out.println("randomAccess?: " + g.randomAccess());
 

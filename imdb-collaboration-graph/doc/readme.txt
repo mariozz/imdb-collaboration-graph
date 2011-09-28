@@ -12,3 +12,9 @@ java -Xmx2G it.unimi.dsi.law.rank.PageRankPowerMethod imdbgraph imdbrank
 
 Stampa i page rank:
 java PrintRanks imdbrank.ranks
+
+Esporta la lista ordinata degli archi:
+java it.unimi.dsi.webgraph.ArcListASCIIGraph -g BVGraph imdbgraph imdbgrapharcslist
+
+Calcola la degree distribution:
+awk '{print $1}' imdbgrapharcslist | uniq -c  | awk '{print $1}' |  uniq -c | awk '{print $2, $1}' > imdbgraphdd.txt 

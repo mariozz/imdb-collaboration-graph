@@ -15,7 +15,11 @@
 	<classpathentry kind="lib" path="lib/webgraph-deps/junit4-4.5.jar"/>
 	<classpathentry kind="lib" path="lib/webgraph-deps/log4j-1.2.14.jar"/>
 	<classpathentry kind="lib" path="lib/webgraph-deps/sux4j-3.0.jar"/>
-	<classpathentry kind="lib" path="lib/webgraph-3.0/webgraph-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/webgraph-3.0/webgraph-3.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/mario/git/imdb-collaboration-graph/imdb-collaboration-graph/lib/webgraph-3.0/docs/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.17/mysql-connector-java-5.1.17-bin.jar"/>
 	<classpathentry kind="lib" path="lib/law-1.4/law-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
