@@ -5,7 +5,7 @@ import java.util.*;
 public class WriteRanks {
 	public static void main(String[] args) {
 		if(args.length != 1){
-			System.err.println("Usage: java PrintRanks RANK_FILENAME");
+			System.err.println("Usage: java WriteRanks RANK_FILENAME");
 			System.exit(1);
 		}
 
