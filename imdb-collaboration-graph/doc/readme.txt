@@ -8,7 +8,7 @@ Crea il grafo
 java it.unimi.dsi.webgraph.ScatteredArcsASCIIGraph -L -S imdbgraph < results.txt
 
 Calcola il page rank (con il metodo delle potenze):
-java -Xmx2G it.unimi.dsi.law.rank.PageRankPowerMethod imdbgraph imdbrank
+java -Xmx2G it.unimi.dsi.law.rank.PageRankPowerMethod imdbgraph imdbrankpow
 
 Stampa i page rank:
 java PrintRanks imdbrank.ranks

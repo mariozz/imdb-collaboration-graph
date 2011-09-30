@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import sys
 
-f = open("imdbgraphdd.txt", "r")
+f = open("../results/imdbgraphdd.txt", "r")
 matrice = f.readlines()
 gradi=[]
 nodi=[]
