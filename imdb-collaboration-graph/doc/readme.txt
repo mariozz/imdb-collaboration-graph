@@ -11,7 +11,13 @@ Calcola il page rank (con il metodo delle potenze):
 java -Xmx2G it.unimi.dsi.law.rank.PageRankPowerMethod imdbgraph imdbrankpow
 
 Stampa i page rank:
-java PrintRanks imdbrank.ranks
+java PrintRanks imdbgraphrankpow.ranks
+
+Ordina i risultati:
+java imdb.PageRankSort imdbgraphrankpow.res
+
+Converti nodeId to name:
+java -Xmx2G imdbNode2sql [int]
 
 Esporta la lista ordinata degli archi:
 java it.unimi.dsi.webgraph.ArcListASCIIGraph -g BVGraph imdbgraph imdbgrapharcslist

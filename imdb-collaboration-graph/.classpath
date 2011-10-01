@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/webgraph-deps/colt-1.2.0.jar"/>
 	<classpathentry kind="lib" path="lib/webgraph-deps/dsiutils-2.0.jar"/>
@@ -16,7 +17,7 @@
 	<classpathentry kind="lib" path="lib/webgraph-deps/sux4j-3.0.jar"/>
 	<classpathentry kind="lib" path="lib/webgraph-3.0/webgraph-3.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="file:/Users/mario/git/imdb-collaboration-graph/imdb-collaboration-graph/lib/webgraph-3.0/docs/"/>
+			<attribute name="javadoc_location" value="file:/lib/webgraph-3.0/docs/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.17/mysql-connector-java-5.1.17-bin.jar"/>
