@@ -19,7 +19,7 @@ import com.martiansoftware.jsap.JSAPException;
  */
 public class Node2sql {
 
-	public static String graph = "/Users/mario/imdb-graph-duplicates/imdbgraph";
+	public static String graph = "/Users/mario/imdb-collaboration-graph/imdb-collaboration-graph/results/graph/imdbgraph";
 	
 	public static void main(String[] args) throws IllegalArgumentException,
 			SecurityException, IllegalAccessException,
@@ -66,7 +66,7 @@ public class Node2sql {
 			String url = "jdbc:mysql://localhost/imdb";
 			
 			/* Obtain a connection */
-			Connection con = DriverManager.getConnection(url, "root", "inter1");
+			Connection con = DriverManager.getConnection(url, "root", "ingdis");
 			
 			/* Create a statement */
 			Statement cmd = con.createStatement();
