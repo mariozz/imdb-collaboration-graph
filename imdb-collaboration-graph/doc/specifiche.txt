@@ -1,0 +1,7 @@
+
+IMDb Collaboration Graph
+Scaricare e analizzare un dump recente di IMDb (disponibile qui) e costruire il grafo di collaborazione tra tutte le persone che hanno lavorato insieme ad un film (actor, actress, director, writer). Ogni arco può essere pesato con il numero di film in cui le due persone corrispondenti agli endpoint dell'arco hanno lavorato insieme. Analizzare proprietà topologiche del grafo, ad esempio:
+
+    Calcolare degree distribution e pagerank, e verificare chi sono i nodi più influenti nel grafo (ad es. se corrispondono a registi famosi o attori di hollywood).
+    Verificare se le suddette proprietà sono assortative (cioè se attori influenti lavorano maggiormente con attori/attrici/registi/ sceneggiatori influenti, o viceversa).
+    Fare clustering dei nodi del grafo e verificare se i cluster ottenuti rispecchiano case di produzione, o la fama degli attori, o altro.
