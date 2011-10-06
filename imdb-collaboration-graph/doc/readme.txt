@@ -10,10 +10,10 @@ java it.unimi.dsi.webgraph.ScatteredArcsASCIIGraph -L -S imdbgraph < results.txt
 Calcola il page rank (con il metodo delle potenze):
 java -Xmx2G it.unimi.dsi.law.rank.PageRankPowerMethod imdbgraph imdbrankpow
 
-Stampa i page rank:
-java PrintRanks imdbgraphrankpow.ranks
+Scrive i page rank su imdbgraphrankpow.res:
+java WriteRanks imdbgraphrankpow.ranks
 
-Ordina i risultati:
+Ordina i risultati e li scrive in imdbgraphrankpow.ord:
 java imdb.PageRankSort imdbgraphrankpow.res
 
 Converti nodeId to name:

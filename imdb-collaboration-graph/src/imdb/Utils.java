@@ -1,0 +1,146 @@
+package imdb;
+
+import it.unimi.dsi.fastutil.io.BinIO;
+import it.unimi.dsi.webgraph.BVGraph;
+import it.unimi.dsi.webgraph.LazyIntIterator;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class Utils {
+
+	private static String graph = "/Users/mario/imdb-collaboration-graph/imdb-collaboration-graph/results/graph/imdbgraph";
+
+	/* Return the list of names of neighbors of nodeID */
+	public static LinkedList<Long> nodeNeighbors(int nodeID) throws IOException {
+		
+		/* List of the neighbors of NodeID */
+		LinkedList<Long> neighborsName = new LinkedList<Long>(); 
+		
+		/* Load the graph */
+		BVGraph g = BVGraph.load(graph);
+
+		/* Read the ids file */
+		long[] idsArray = BinIO.loadLongs((CharSequence) graph + ".ids");
+		
+		/* Retrieve all the neighbors of a node*/
+		long personID = idsArray[nodeID];
+		neighborsName.add(personID);
+		
+		long neighborID = 0;
+
+		LazyIntIterator i1 = g.successors(nodeID);
+
+		int t;
+		while ((t = i1.nextInt()) != -1) {
+			neighborID = idsArray[t];
+			neighborsName.add(neighborID);
+		}
+		
+		return neighborsName;
+	}
+		
+	/* Given a nodeID in Webgraph return a personID */
+	public static long nodeIDtoPersonID(int nodeID) throws IOException {
+
+		/* Read the ids file */
+		long[] idsarray = BinIO.loadLongs((CharSequence) graph + ".ids");
+
+		/* Retrieve all the neighbors of a node */
+		long personID = idsarray[nodeID];
+		
+		return personID;
+	}
+
+	/* Given a personID query the DB and print a Name*/
+	public static String personIDtoName(long personID) {
+		/* Given a personID retrieve from the DB the name */
+		try {
+			/* Load the driver */
+			String driver = "com.mysql.jdbc.Driver";
+			Class.forName(driver);
+
+			/* Create the string for the connection */
+			String url = "jdbc:mysql://localhost/imdb";
+
+			/* Obtain a connection */
+			Connection con = DriverManager.getConnection(url, "root", "ingdis");
+
+			/* Create a statement */
+			Statement cmd = con.createStatement();
+
+			/* Execute the query and store the result */
+			String qry = "SELECT name.name FROM name WHERE name.id = "
+					+ personID;
+			ResultSet res = cmd.executeQuery(qry);
+
+			/* Print the results */
+			while (res.next()) {
+				//System.out.println(res.getString("name"));
+				return res.getString("name");
+			}
+			res.close();
+			cmd.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+	
+	public static LinkedList<String> personsIDtoNames(LinkedList<Long> personsID) {
+		
+		LinkedList<String> neighborsNames = new LinkedList<String>(); 
+		
+		/* Given a personID retrieve from the DB the name */
+		try {
+			/* Load the driver */
+			String driver = "com.mysql.jdbc.Driver";
+			Class.forName(driver);
+
+			/* Create the string for the connection */
+			String url = "jdbc:mysql://localhost/imdb";
+
+			/* Obtain a connection */
+			Connection con = DriverManager.getConnection(url, "root", "ingdis");
+
+			/* Create a statement */
+			Statement cmd = con.createStatement();
+
+			/**/
+			Iterator<Long> it = personsID.iterator();
+			
+			/* Execute the query and store the result */
+			String qry;
+			ResultSet res;
+			
+			while (it.hasNext()){
+				
+				qry = "SELECT name.name FROM name WHERE name.id = " + it.next();
+				//System.out.println(qry);
+				res = cmd.executeQuery(qry);
+				res.next();
+				neighborsNames.add(res.getString("name"));
+				res.close();
+			}
+			
+			cmd.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		return neighborsNames;
+	}
+}
