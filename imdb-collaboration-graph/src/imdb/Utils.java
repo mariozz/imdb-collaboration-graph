@@ -15,7 +15,7 @@ import java.util.LinkedList;
 
 public class Utils {
 
-	private static String graph = "/Users/mario/imdb-collaboration-graph/imdb-collaboration-graph/results/graph/imdbgraph";
+	private static String graph = "results/graph/imdbgraph";
 
 	/* Return the list of names and nodeIDs of neighbors of nodeID */
 	public static DoubleList nodeNeighbors(int nodeID) throws IOException {
