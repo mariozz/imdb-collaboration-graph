@@ -1,5 +1,4 @@
 #! /usr/bin/python
-#from pylab import *
 import matplotlib.pyplot as plt
 import sys
 
