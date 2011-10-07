@@ -3,11 +3,11 @@ package imdb;
 public class Line implements Comparable<Line> {
 	
 	public Double pagerank;
-	public Integer nodeID;
+	public Object id;
 	
-	public Line (Double p, Integer n){
+	public Line (Double p, Object i){
 		pagerank = p;
-		nodeID = n;
+		id = i;
 	}
 	
 	
@@ -24,6 +24,6 @@ public class Line implements Comparable<Line> {
 	}
 
 	public String toString(){
-		return pagerank +" "+ nodeID; 
+		return pagerank +" "+ id; 
 	}
 }

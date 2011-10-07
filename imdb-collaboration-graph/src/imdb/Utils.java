@@ -17,11 +17,14 @@ public class Utils {
 
 	private static String graph = "/Users/mario/imdb-collaboration-graph/imdb-collaboration-graph/results/graph/imdbgraph";
 
-	/* Return the list of names of neighbors of nodeID */
-	public static LinkedList<Long> nodeNeighbors(int nodeID) throws IOException {
+	/* Return the list of names and nodeIDs of neighbors of nodeID */
+	public static DoubleList nodeNeighbors(int nodeID) throws IOException {
 		
-		/* List of the neighbors of NodeID */
-		LinkedList<Long> neighborsName = new LinkedList<Long>(); 
+		/* List of the PersonID of the neighbors of NodeID */
+		LinkedList<Long> neighborsPersonID = new LinkedList<Long>();
+		
+		/* List of the NodeID of the neighbors of NodeID */
+		LinkedList<Integer> neighborsNodeID = new LinkedList<Integer>();
 		
 		/* Load the graph */
 		BVGraph g = BVGraph.load(graph);
@@ -31,19 +34,21 @@ public class Utils {
 		
 		/* Retrieve all the neighbors of a node*/
 		long personID = idsArray[nodeID];
-		neighborsName.add(personID);
+		neighborsNodeID.add(nodeID);
+		neighborsPersonID.add(personID);
 		
 		long neighborID = 0;
 
-		LazyIntIterator i1 = g.successors(nodeID);
+		LazyIntIterator i = g.successors(nodeID);
 
-		int t;
-		while ((t = i1.nextInt()) != -1) {
-			neighborID = idsArray[t];
-			neighborsName.add(neighborID);
+		int nodeneighborID;
+		while ((nodeneighborID = i.nextInt()) != -1) {
+			neighborID = idsArray[nodeneighborID];
+			neighborsNodeID.add(nodeneighborID);
+			neighborsPersonID.add(neighborID);
 		}
 		
-		return neighborsName;
+		return new DoubleList(neighborsNodeID, neighborsPersonID);
 	}
 		
 	/* Given a nodeID in Webgraph return a personID */
