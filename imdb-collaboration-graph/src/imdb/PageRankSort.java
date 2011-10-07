@@ -4,54 +4,47 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Iterator;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.StringTokenizer;
-import java.util.TreeMap;
+import java.util.LinkedList;
 
 
-public class PageRankSort {
-	
+public class PageRankSort {	
 	
 	public static void main (String[] args) throws IOException{
 		
-		BufferedReader br = new BufferedReader(new FileReader("/Users/mario/imdb-graph-duplicates/imdbgraphrankpow.res"));
+		/* Read from imdbgraphpow.res (ordered by nodeID)*/
+		BufferedReader br = new BufferedReader(new FileReader("results/pageranks/imdbgraphrankpow.res"));
 		
+		LinkedList<Line> list = new LinkedList<Line>();
 		
-		TreeMap<Double,Integer> m = new TreeMap<Double,Integer>();
-		
+		/* Covert the lines of imdbgraphpow.res in Line objects and add them to the list*/
 		String s = br.readLine();
 		int j = 0;
-		
+		Line l = null;
 		
 		while(s !=null){
-			m.put(Double.parseDouble(s), j);
+			
+			l = new Line(Double.parseDouble(s), j );
+			list.add(l);
 			s = br.readLine();
 			j++;
 		}
-		
 		br.close();
 		
-		Set<Entry<Double, Integer>>e = m.entrySet();
-		Iterator<Entry<Double, Integer>> it = e.iterator();
+		/* Order the list*/
+		Collections.sort(list);
 		
-		BufferedWriter bw = new BufferedWriter(new FileWriter("/Users/mario/imdb-graph-duplicates/imdbgraphrankpow.ord"));
-		StringTokenizer st;
-		String value;
-		String nodeID;
+		/* Write the elements of the list in imdbgraphrankpow.ord */
+		BufferedWriter bw = new BufferedWriter(new FileWriter("results/pageranks/imdbgraphrankpow.ord"));
+		
+		Iterator<Line> it = list.iterator();
 		
 		while(it.hasNext()){
-			st= new StringTokenizer(it.next().toString(), "=");
-			
-			value=st.nextToken();
-			nodeID=st.nextToken();
-			
-			bw.write(nodeID+" "+value+"\n");
-			
+			bw.write(it.next().toString()+"\n");
 		}
-		bw.close();
 		
+		bw.close();
 	}
 
 }

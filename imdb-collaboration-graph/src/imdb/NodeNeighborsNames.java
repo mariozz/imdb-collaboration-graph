@@ -23,6 +23,9 @@ public class NodeNeighborsNames {
 		while(it.hasNext()){
 			System.out.println(it.next());
 		}
+		/**/
+		
+		
 		
 	}
 
