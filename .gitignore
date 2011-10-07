@@ -3,3 +3,6 @@ DS_Store
 imdb-collaboration-graph/results/graph/imdbgraph.graph
 
 imdb-collaboration-graph/results/arcslists/
+
+imdb-collaboration-graph/bin/
+
