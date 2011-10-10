@@ -9,7 +9,7 @@ x=[]
 for j in range (0,len(matrice)):
 	tokens = matrice[j].split()
 	x = x + [j]
-	ranks = ranks + [tokens[1]]
+	ranks = ranks + [tokens[0]]
 	
 plt.plot(x, ranks, 'rx')
 #plt.xscale('log')
