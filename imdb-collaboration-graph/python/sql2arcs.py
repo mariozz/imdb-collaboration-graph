@@ -4,11 +4,11 @@ import sys,commands
 totalmovies = 1986952
 
 #connect to DB
-ia = IMDb('sql', uri='mysql://root:inter1@localhost/imdb') #local mysql DB
+ia = IMDb('sql', uri='mysql://root:ingdis@localhost/imdb') #local mysql DB
 #ia = IMDb() #online DB
 
 #open results
-results = open("results.txt", 'w')
+results = open("../results/arcslists/imdbgrapharcslistfromdb.txt", 'w')
 
 i=0
 #for every movie

@@ -4,6 +4,8 @@ import it.unimi.dsi.fastutil.io.BinIO;
 import it.unimi.dsi.webgraph.BVGraph;
 import it.unimi.dsi.webgraph.LazyIntIterator;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -147,5 +149,32 @@ public class Utils {
 		}
 
 		return neighborsNames;
+	}
+	
+	public static LinkedList<String> readNames(int nodeIds) throws IOException{
+		
+		/* Create the list of persons ids */
+		long[] idsArray = BinIO.loadLongs("results/graph/imdbgraph.ids");
+		LinkedList<Long> personsID = new LinkedList<Long>();
+		
+		/* Read the first 'nodeIds' ids and store them into a list*/
+		for(int i=0; i<nodeIds; i++){
+			personsID.add(idsArray[i]);
+		}
+		
+		/* Read from the DB and convert persons ids into names*/
+		LinkedList<String> names = Utils.personsIDtoNames(personsID);
+		
+		return names;
+	}
+	
+	public static void main(String args[]) throws IOException{
+		/* Create the list of persons ids */
+		long[] idsArray = BinIO.loadLongs("results/graph/imdbgraph.ids");
+		BufferedWriter bw = new BufferedWriter(new FileWriter("results/graph/imdbgraph.ids.txt"));
+		
+		for(int i=0; i<idsArray.length; i++){
+			bw.write(idsArray[i]+"\n");
+		}
 	}
 }

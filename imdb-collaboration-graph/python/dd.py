@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 import sys
 
-f = open("../results/imdbgraphdd.txt", "r")
+f = open("../results/dd/imdbgraphdd.txt", "r")
 matrice = f.readlines()
 gradi=[]
 nodi=[]
@@ -18,8 +18,8 @@ plt.yscale('log')
 
 
 plt.grid(True)
-plt.xlabel('Grado')
-plt.ylabel('# Persone')
+plt.xlabel('Degree')
+plt.ylabel('# of Person')
 #plt.legend(title='Probability',loc=4)
 #plt.title('Number of received messages with Gossiping(p,k)')
 plt.show()
