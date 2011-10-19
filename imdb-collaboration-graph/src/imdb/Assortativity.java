@@ -74,7 +74,7 @@ public class Assortativity {
 		averageAssortativityCoeff = totalAssortativityCoeff / nodeNum;
 		
 		/* Write average assortativity value to a file */
-		BufferedWriter aw = new BufferedWriter(new FileWriter("/results/assortativity/assortativityCoeff"));
+		BufferedWriter aw = new BufferedWriter(new FileWriter("results/assortativity/assortativityCoeff"));
 		aw.write(String.valueOf(averageAssortativityCoeff));
 		
 		aw.close();
