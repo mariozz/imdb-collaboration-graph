@@ -15,8 +15,6 @@ plt.plot(gradi, nodi, 'rx')
 plt.xscale('log')
 plt.yscale('log')
 
-
-
 plt.grid(True)
 plt.xlabel('PageRank')
 plt.ylabel('# of Persons')
