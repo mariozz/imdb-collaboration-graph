@@ -22,6 +22,12 @@ java WriteRanks results/pageranks/imdbgraphrankpow.ranks
 Order results/pageranks/imdbgraphrankpow.res by page rank and write the results in results/pageranks/imdbgraphrankpow.ord:
 java imdb.PageRankSort results/pageranks/imdbgraphrankpow.res
 
+Approximate the pagerank (with 8 decimal values):
+python pagerankapprox.py
+
+Calculate the pagerank distribution:
+awk '{print $1}' imdbgraphrankpow.res.approx | sort -g | uniq -c | awk '{print $2, $1}' > imdbgraphrankpow.distribution
+
 
 # DEGREE DISTRIBUTION
 Export the ordered by node ID list of arcs:

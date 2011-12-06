@@ -2,26 +2,23 @@
 import matplotlib.pyplot as plt
 import sys
 
-f = open("../results/pageranks/imdbgraphrankpow.res", "r")
-w = open("../results/pageranks/imdbgraphrankpow.res.approx", "w")
+f = open("../results/pageranks/imdbgraphrankpow.distribution", "r")
 matrice = f.readlines()
-ranks=[]
-x=[]
-
-print(round(float(6.032755206358235E-8),8))
-print(round(float(4.830324610696718E-5),8))
-for rank in matrice:
-	approx = round(float(rank),8)
-	w.write(str(approx)+"\n")
+gradi=[]
+nodi=[]
+for j in matrice:
+	tokens = j.split()
+	gradi = gradi +[tokens[0]]
+	nodi = nodi + [tokens[1]]
 	
-f.close()
-w.close()
-#plt.plot(x, ranks, 'rx')
-#plt.xscale('log')
-#plt.yscale('log')
+plt.plot(gradi, nodi, 'rx')
+plt.xscale('log')
+plt.yscale('log')
 
 
 
-#plt.grid(True)
-#plt.ylabel('Ranks')
-#plt.show()
+plt.grid(True)
+plt.xlabel('PageRank')
+plt.ylabel('# of Persons')
+plt.title('IMDb collaboration graph - PageRank Distribution')
+plt.show()
