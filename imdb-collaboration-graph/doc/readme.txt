@@ -54,7 +54,7 @@ See: results/clusters/clusters10/clusters.info.txt
 
 
 # ASSORTATIVITY
-Calculate the assortativity coefficient for every node and the mean value.
+Calculate the assortativity for every node and the assortativity coefficient (the assortativity of x is the sum of neighbors ranks' / # of neighbors of x; the assortativity coefficient is the sum of nodes' assortativities / # of nodes).
 java -Xmx2G imdb Assortativity
 [output]: results/assortativity/assortativity --> the file contains the assortativity coefficient for each node
 [output]: results/assortativity/assortativityCoeff --> the file contains the mean assortativity coefficient value
