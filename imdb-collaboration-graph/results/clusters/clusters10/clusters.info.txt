@@ -4,7 +4,7 @@ cluster2 britain-ireland-holland
 cluster3 france-italy-spain-portugal
 cluster4 germany-switzerland-austria
 cluster5 oldies
-cluster6
-cluster7
-cluster8
+cluster6 sportscaster
+cluster7 canada
+cluster8 american vip (non professional actor)
 cluster9 hollywood
