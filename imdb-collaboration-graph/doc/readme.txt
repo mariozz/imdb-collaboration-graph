@@ -68,4 +68,4 @@ java -Xmx2G imdb Assortativity
 
 # OTHERS
 Given a node ID return the correspondent name:
-java -Xmx2G imdbNode2sql [int]
+java -Xmx2G imdb.Node2sql [int]
